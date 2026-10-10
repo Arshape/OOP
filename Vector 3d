@@ -1,0 +1,65 @@
+public class Vector {
+    
+    private int x;
+    private int y;
+    private int z;
+
+    public Vector(int x, int y, int z){
+        setX(x);
+        setY(y);
+        setZ(z);
+
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public void setX(int value) {
+        this.x = value;
+    }
+
+    public int getY(){
+        return y;
+    }
+
+    public void setY(int value) {
+        this.y = value;
+    }
+
+    public int getZ(){
+        return z;
+    }
+
+    public void setZ(int value) {
+        this.z = value;
+    }
+    
+    public static Vector add(Vector a, Vector b){
+        if (a == null || b == null){
+            throw new IllegalArgumentException("вектор не может быть null");
+        }
+        return new Vector(a.x + b.x, a.y + b.y, a.z + b.z);
+    }
+
+    public static Vector minus(Vector a, Vector b){
+        if (a == null || b == null){
+            throw new IllegalArgumentException("вектор не может быть null");
+        }
+        return new Vector(a.x - b.x, a.y - b.y, a.z - b.z);
+    }
+
+    public static int scalyr(Vector a, Vector b){
+        if (a == null || b == null){
+            throw new IllegalArgumentException("вектор не может быть null");
+        }
+        return (a.x * b.x + a.y * b.y + a.z * b.z);
+    }
+
+    public static Vector multiplication(Vector a, int n){
+        if (a == null){
+            throw new IllegalArgumentException("вектор не может быть null");
+        }
+        return new Vector(a.x * n, a.y *n, a.z * n);
+    }
+}
